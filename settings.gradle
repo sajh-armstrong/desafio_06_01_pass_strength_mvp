@@ -1,0 +1,2 @@
+rootProject.name='Desafio_06_01_Password_Strength_MVP'
+include ':app'

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Desafio_06_01_Password_Strength_MVP</string>
+    <string name="edit_text_password_hint">Ingrese Contraseña</string>
+    <string name="pass_strength_weak">Débil</string>
+    <string name="pass_strength_medium">Medio</string>
+    <string name="pass_strength_strong">Fuerte</string>
+</resources>
