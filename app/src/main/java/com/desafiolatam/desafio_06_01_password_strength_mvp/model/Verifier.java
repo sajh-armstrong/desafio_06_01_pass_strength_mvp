@@ -1,6 +1,6 @@
 package com.desafiolatam.desafio_06_01_password_strength_mvp.model;
 
-public class Verifier {
+public class Verifier implements IVerifier{
 
     public static final int PASS_STRENGTH_WEAK = 0;
     public static final int PASS_STRENGTH_MEDIUM = 1;
@@ -52,4 +52,8 @@ public class Verifier {
             return PASS_STRENGTH_VERY_STRONG;
     }
 
+    @Override
+    public int sendPassStrength(String pass) {
+        return checkPassStrength(pass);
+    }
 }

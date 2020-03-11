@@ -4,4 +4,5 @@
     <string name="pass_strength_weak">Débil</string>
     <string name="pass_strength_medium">Medio</string>
     <string name="pass_strength_strong">Fuerte</string>
+    <string name="pass_strength_very_strong">Muy Fuerte</string>
 </resources>

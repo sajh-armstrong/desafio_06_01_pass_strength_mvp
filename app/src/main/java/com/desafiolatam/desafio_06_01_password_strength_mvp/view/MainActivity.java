@@ -9,9 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.desafiolatam.desafio_06_01_password_strength_mvp.R;
+import com.desafiolatam.desafio_06_01_password_strength_mvp.presenter.DesafioPresenter;
 import com.desafiolatam.desafio_06_01_password_strength_mvp.presenter.IDesafioView;
 
 public class MainActivity extends AppCompatActivity implements IDesafioView {
+
+    IDesafioPresenter presenter;
 
     EditText editText_Password;
     TextView textView_PassStrength;
@@ -20,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements IDesafioView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        presenter = new DesafioPresenter(this);
 
         textView_PassStrength = findViewById(R.id.textView_PassStrength);
 
@@ -32,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements IDesafioView {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                presenter.setPass(s.toString());
             }
 
             @Override
@@ -51,13 +56,16 @@ public class MainActivity extends AppCompatActivity implements IDesafioView {
                 break;
             case 1:
                 textView_PassStrength.setText(R.string.pass_strength_medium);
-                textView_PassStrength.setBackgroundColor(getColor(R.color.colorPassStrengthWeak));
+                textView_PassStrength.setBackgroundColor(getColor(R.color.colorPassStrengthMedium));
                 break;
             case 2:
                 textView_PassStrength.setText(R.string.pass_strength_strong);
-                textView_PassStrength.setBackgroundColor(getColor(R.color.colorPassStrengthWeak));
+                textView_PassStrength.setBackgroundColor(getColor(R.color.colorPassStrengthStrong));
                 break;
-                //TODO VERY STRONG PASS
+            case 3:
+                textView_PassStrength.setText(R.string.pass_strength_very_strong);
+                textView_PassStrength.setBackgroundColor(getColor(R.color.colorPassStrengthVeryStrong));
+                break;
         }
 
     }
